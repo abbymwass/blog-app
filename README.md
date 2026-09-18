@@ -1,73 +1,49 @@
-# Blog App
+# TechPulse - Modern Next.js & Redux-Saga Blog Application
 
-A modern blog application built with React and Next.js, with Redux for state management and Tailwind CSS for styling.
+A full-featured blog application built with **Next.js (App Router)**, **Redux Toolkit**, **Redux-Saga**, and **Tailwind CSS**.
 
-## Project Description
+## 🚀 Getting Started
 
-This project is a foundation for a responsive blog experience where users can browse posts and interact with blog content through a clean, component-based interface.
-
-## Setup Instructions
-
-### Prerequisites
-
-- Node.js 18.17 or later
-- npm, pnpm, or yarn
-
-### Install and run locally
+The development server is ready to run locally:
 
 ```bash
-npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open your browser and navigate to:
+**[http://localhost:3000](http://localhost:3000)**
 
-Production build:
+---
 
-```bash
-npm run build
-npm start
-```
+## 📄 Pages & Routes Implemented
 
-> This checkout currently contains the project documentation only. Add the application source and package scripts before running these commands.
+| Route | Page | Description |
+| :--- | :--- | :--- |
+| `/` | **Home** | Landing page with featured post banner, topic pills, recent articles, and newsletter CTA. |
+| `/blog` | **Blog List** | Browse all posts with real-time search, category filtering, and functional pagination. |
+| `/blog/[id]` | **Blog Detail** | Dynamic article view with author metadata, formatted content, related posts, and an interactive comments section. |
+| `/about` | **About** | The blog's mission, key statistics, editorial standards, author profiles, and contact link. |
+| `/contact` | **Contact** | Interactive contact form (UI only) with client-side feedback and contact info cards. |
+| `/login` | **Login** | Authentication form with an **Instant Demo Admin Login** button for quick testing. |
+| `/signup` | **Signup** | Account registration form. |
+| `/dashboard` | **Admin Dashboard** | **Protected Route** featuring post metrics, a full posts table, and a modal to **Create**, **Edit**, and **Delete** posts. |
 
-## Technologies Used
+---
 
-- React
-- Next.js
-- Redux
-- Tailwind CSS
+## 🛠️ Architecture & Technical Implementation
 
-## Features Implemented
+- **Next.js App Router (16.x):** Server Components, dynamic routes (`/blog/[id]`), and fast client navigation.
+- **Redux Toolkit (`@reduxjs/toolkit`):** Centralized state for posts, search/filter queries, pagination, and authentication.
+- **Redux-Saga (`redux-saga`):** Generator-based side effect management for asynchronous post fetching, creation, deletion, and comment submission.
+- **Tailwind CSS (v4):** Utility-first responsive design supporting light and dark modes.
+- **Image Optimization (`next/image`):** Remote patterns configured for high-resolution post covers and author avatars.
+- **Route Protection:** Protected dashboard view with authentication gate and instant demo sign-in.
 
-- [ ] Browse blog posts
-- [ ] View an individual post
-- [ ] Manage application state with Redux
-- [ ] Responsive styling with Tailwind CSS
-- [ ] Next.js application routing
+---
 
-> Check an item when the corresponding feature is present in the application source.
+## ✍️ How to Customize Your Information
 
-## Screenshots and GIFs
-
-Screenshots or GIFs are not available in this checkout yet. Add key feature captures under `docs/media/` and embed them here, for example:
-
-```md
-![Blog post list](docs/media/post-list.png)
-![Post details](docs/media/post-details.gif)
-```
-
-## Challenges and Solutions
-
-- **Keeping shared UI state predictable:** Redux provides a single, explicit state flow for data that needs to be shared across components.
-- **Building a responsive layout efficiently:** Tailwind CSS utility classes make responsive breakpoints and consistent spacing quick to apply.
-- **Organizing a full-stack React application:** Next.js supplies routing and the application structure needed to grow the blog beyond a single page.
-
-## Future Improvements
-
-- Add authentication and role-based access for authors.
-- Add create, edit, and delete post workflows.
-- Add search, tags, categories, and pagination.
-- Add image uploads and optimized media handling.
-- Add automated tests and continuous integration.
-- Add real screenshots and feature GIFs to this README.
+- **Blog Posts & Seed Data:** Edit [lib/data/posts.ts](lib/data/posts.ts) to add or replace articles, categories, and author details.
+- **About Page Details:** Edit [app/about/page.tsx](app/about/page.tsx) to update team members, milestones, and mission statement.
+- **Contact Details:** Edit [app/contact/page.tsx](app/contact/page.tsx) to customize contact email, address, and phone numbers.
+- **Branding & Navigation:** Edit [components/Navbar.tsx](components/Navbar.tsx) and [components/Footer.tsx](components/Footer.tsx).
